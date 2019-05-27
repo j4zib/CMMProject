@@ -5,11 +5,14 @@
     <item
         android:id="@+id/reset_section"
         android:orderInCategory="100"
-        android:title="Choose Branch"
-        app:showAsAction="never" />
+        android:title="Wallet"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_account_balance_wallet_black_24dp"
+        />
     <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"
-        android:title="Settings"
-        app:showAsAction="never" />
+        android:title="Reward"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_attach_money_black_24dp"/>
 </menu>

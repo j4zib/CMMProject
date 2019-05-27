@@ -97,6 +97,7 @@
                                 android:text="Your free trial expired on 29 Jan 2019. Please upgrade now to get full access."
                                 android:layout_gravity="center"
                                 android:padding="8dp"
+                                android:id="@+id/trial_text"
                                 />
 
                         </LinearLayout>
@@ -158,10 +159,12 @@
             android:id="@+id/navigation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="?android:attr/windowBackground"
             app:menu="@menu/navigation"
             android:layout_gravity="bottom"
             app:labelVisibilityMode="labeled"
+            app:itemBackground="@color/colorPrimary"
+            app:itemIconTint="@android:color/white"
+            app:itemTextColor="@android:color/white"
             />
 
     </android.support.design.widget.CoordinatorLayout>

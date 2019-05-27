@@ -13,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.text.Html;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -30,18 +31,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.navigation_home:
-                    mTextMessage.setText(R.string.title_home);
-                    return true;
-                case R.id.navigation_dashboard:
-                    mTextMessage.setText(R.string.title_dashboard);
-                    return true;
-                case R.id.navigation_notifications:
-                    mTextMessage.setText(R.string.title_notifications);
-                    return true;
-            }
-            return false;
+            return true;
         }
     };
 
@@ -58,14 +48,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setSupportActionBar(toolbar);
         DrawerLayout mDrawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, mDrawer, toolbar,  0, 1);
+                this, mDrawer, toolbar,  R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         mDrawer.setDrawerListener(toggle);
         toggle.syncState();
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
        // navigationView.getMenu().getItem(0).setChecked(true);
 
-
+        TextView trialText = findViewById(R.id.trial_text);
+        String first = "Your free trial expired on ";
+        String next = "<font color='#00BCD4'>29 Jan 2019</font>";
+        String last = ".<br>Please upgrade now to get full access.";
+        trialText.setText(Html.fromHtml(first + next + last));
         rvSubject = findViewById(R.id.subject_rv);
         rvSubject.setLayoutManager(new LinearLayoutManager(this));
         subjectAdapter = new SubjectAdapter();
