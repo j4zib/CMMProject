@@ -19,6 +19,7 @@
             android:layout_margin="8dp"
             app:cardCornerRadius="8dp"
             android:clipChildren="true"
+            android:id="@+id/upgrade_card"
            >
 
             <LinearLayout
@@ -87,7 +88,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     tools:listitem="@layout/subject_row"
-                    >
+                    android:id="@+id/subject_rv">
 
                 </android.support.v7.widget.RecyclerView>
 
