@@ -47,6 +47,7 @@ public class SubjectAdapter extends ListAdapter<Subject,SubjectAdapter.ViewHolde
         viewHolder.name.setText(entry.getName());
         viewHolder.progress.setText(String.format("%.2f", entry.getProgress())+"%");
         viewHolder.subjectProgress.setProgress((int)entry.getProgress());
+        viewHolder.subjectImage.setImageResource(entry.getImage());
     }
 
 
